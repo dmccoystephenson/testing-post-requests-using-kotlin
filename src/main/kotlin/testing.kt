@@ -4,22 +4,29 @@ import java.net.URL
 
 
 fun main() {
-    println("Program executing.");
+    println("Executing...");
     sendRequest();
     println("Program has finished executing.");
 }
 
 private fun sendRequest() {
+    println("Setting up http connection...");
     val targetURL = getEnvironmentVariable("TARGET_URL");
     val url = URL(targetURL)
     val httpCon = url.openConnection() as HttpURLConnection
     httpCon.doOutput = true
     httpCon.requestMethod = "POST"
+
+    println("Instantiating OutputStreamWriter...")
     val out = OutputStreamWriter(
         httpCon.outputStream
     )
-    println(httpCon.responseCode)
-    println(httpCon.responseMessage)
+
+    // TODO: something here?
+
+    println("\n=== Response ===")
+    println("Code: " + httpCon.responseCode)
+    println("Message: " + httpCon.responseMessage)
     out.close()
 }
 
