@@ -4,9 +4,7 @@ import java.net.URL
 
 
 fun main() {
-    println("Executing...");
     sendRequest();
-    println("Program has finished executing.");
 }
 
 private fun sendRequest() {
