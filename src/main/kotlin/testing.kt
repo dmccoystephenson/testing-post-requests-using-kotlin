@@ -23,7 +23,7 @@ private fun sendRequest() {
     val message = getEnvironmentVariable("REQUEST_MESSAGE");
     println("Sending request...")
     out.write(message)
-    println("Request sent. Content: " + message);
+    println("Request sent. Content: $message");
 
     println("\n=== Response ===")
     println("Code: " + httpCon.responseCode)
